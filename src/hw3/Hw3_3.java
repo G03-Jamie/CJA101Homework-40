@@ -9,18 +9,49 @@ public class Hw3_3 {
 		    
 		    Scanner sc = new Scanner(System.in);
 		    
-		    System.out.println("開始猜數字吧!(0~9)");
-		    int i = (int)(Math.random()*10);
+//		    System.out.println("開始猜數字吧!(0~9)");
+//		    int i = (int)(Math.random()*10);
+//	   
+//		    	
+//		    while(i < 9) { 
+//		    	int keyIn = sc.nextInt();
+//		    	if(keyIn == i) {
+//		    		System.out.println("答對了，答案就是" + keyIn);
+//		    		break;
+//		    	}
+//		    	else if(keyIn < i && keyIn >0) {
+//		    		System.out.println("猜錯囉!正確答案比較大");
+//		    		continue;
+//		    	}
+//		    	else if(keyIn > i && keyIn < 9){
+//		    		System.out.println("猜錯囉!正確答案比較小");
+//		    		continue;
+//		    	}
+//		    	else {System.out.println("數字輸入範圍錯誤，請重新輸入(0-9)");
+//		    	   continue;
+//		    	}
+//		    }
+//		    
+		    System.out.println("開始猜數字吧!(0~100)");
+		    int j = (int)(Math.random()*101);
 		   
+		    
+		    while(j < 101) {
+		    	int keyIn = sc.nextInt();	
 		    	
-		    while(i < 9) { 
-		    	int keyIn = sc.nextInt();
-		    	if(keyIn == i) {
-		    		System.out.println("答對了，答案就是" + keyIn);
-		    		break;
+			    	if(keyIn == j) {
+			    		System.out.println("答對了，答案就是" + keyIn);
+			    		break;
+			    	}
+			    	else if(keyIn < j && j >0 ) {
+			    		System.out.println("猜錯囉!正確答案比較大");
+			    		continue;
+			    	}
+			    	else if(keyIn > j && keyIn < 100){
+			    		System.out.println("猜錯囉!正確答案比較小");
+			    		continue;
+			    	}
 		    	}
-		    	else {System.out.println("猜錯囉!");}
-		    	continue;
 		    }
 	}
-}
+
