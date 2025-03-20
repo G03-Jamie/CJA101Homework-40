@@ -61,8 +61,9 @@ public class Hw3_2 {
             	if(data3[i][j] > 0) {
             	count++;
                 System.out.print(data3[i][j] + "\t");}
-            	else {System.out.print("總共有" + count + "個數字可以選");
+            	else  {System.out.print("總共有" + count + "個數字可以選");
             	break;}
+          
             }
             
             System.out.println();
