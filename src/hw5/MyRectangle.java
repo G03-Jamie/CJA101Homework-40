@@ -10,10 +10,10 @@ public class MyRectangle {
 	//(2) 有三個方法：
 	//default (相同套件裡的class都可以用)
 	
-	void setWidth(double width) {  //將收到的引數指定給width屬性
+	void setWidth(double width) {  //將收到的參數指定給width屬性
 		this.width = width; }
 	
-	void setDepth(double depth) {  //將收到的引數指定給width屬性
+	void setDepth(double depth) {  //將收到的參數指定給width屬性
 		this.depth = depth; } 
 	
 	
@@ -29,7 +29,7 @@ public class MyRectangle {
 		
 			
 			
-		//傳入的兩個引數會指定給對應的屬性
+		//傳入的兩個參數會指定給對應的屬性
 		public MyRectangle(double width, double depth) {
 			this.width = width;
 			this.depth = depth;
