@@ -11,6 +11,8 @@ public class Calculator {
 	}
 
 	public Calculator(int x, int y) throws CalException {
+		this.x = x;
+		this.y = y;
 		setCalculator();
 	}
 
@@ -18,8 +20,7 @@ public class Calculator {
 
 		keyIn();
 		if (x > 0 && y > 0) {
-			this.x = x;
-			this.y = y;
+			
 		} else if (y < 0)
 			throw new CalException("次方為負值，結果回傳不為整數!");
 
@@ -30,10 +31,7 @@ public class Calculator {
 
 	}
 
-	public int powerXY(int x, int y) {
-		return (int) Math.pow(x, y);
 
-	}
 
 	public void keyIn() {
 		System.out.println("請輸入x的值: ");
@@ -42,6 +40,11 @@ public class Calculator {
 		this.x = Integer.parseInt(sc.nextLine());
 		System.out.println("請輸入y的值: ");
 		this.y = Integer.parseInt(sc.nextLine());
+	}
+	
+	public int powerXY(int x, int y) {
+		return (int) Math.pow(x, y);
+
 	}
 
 	public void showinfo() {
