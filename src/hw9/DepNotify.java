@@ -33,7 +33,7 @@ public class DepNotify {
 			if (times == 10) {
 				notifyAll();
 				sonDone = true;
-			System.out.println("熊大完成第10次提款!");
+				System.out.println("熊大完成第10次提款!");
 			}
 			if (money < 2000) {
 				System.out.println("熊大看到餘額在2000以下，要求匯款");
@@ -45,20 +45,14 @@ public class DepNotify {
 	}
 
 	public void mom(int deposit) {
-		synchronized (this) {
-
-			money += deposit;
-			System.out.println("媽媽存了" + 2000 + "，帳戶共有:" + money);
-
-			notifyAll(); // 老媽通知熊大已匯款
+		outer: synchronized (this) {
 
 			while (money > 3000) {
-
+				System.out.println("媽媽看到餘額在3000以上，暫停匯款");
 				if (sonDone) {
-					break;
+					break outer;
 				}
 				try {
-					System.out.println("媽媽看到餘額在3000以上，暫停匯款");
 					System.out.println("熊大被老媽告知帳戶已經有錢");
 					wait();
 
@@ -66,6 +60,11 @@ public class DepNotify {
 					e.printStackTrace();
 				}
 			}
+
+			money += deposit;
+			System.out.println("媽媽存了" + 2000 + "，帳戶共有:" + money);
+
+			notifyAll(); // 老媽通知熊大已匯款
 
 		}
 	}
@@ -83,7 +82,7 @@ class Mom extends Thread {
 		for (int i = 1; i <= 10; i++) {
 			money.mom(2000);
 		}
-		System.out.println("媽媽完成第10次匯款!");
+
 	}
 }
 
